@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/darickc/Code/gsender2mqtt/gsender2mqtt.csproj": {}
+  },
+  "projects": {
+    "/Users/darickc/Code/gsender2mqtt/gsender2mqtt.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/darickc/Code/gsender2mqtt/gsender2mqtt.csproj",
+        "projectName": "gsender2mqtt",
+        "projectPath": "/Users/darickc/Code/gsender2mqtt/gsender2mqtt.csproj",
+        "packagesPath": "/Users/darickc/.nuget/packages/",
+        "outputPath": "/Users/darickc/Code/gsender2mqtt/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/darickc/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://tfs.byui.edu/tfs/BYUIDefault/_packaging/BYUI/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "MQTTnet": {
+              "target": "Package",
+              "version": "[5.0.0.1405, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "SocketIOClient": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

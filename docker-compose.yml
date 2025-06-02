@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  gsender2mqtt:
+    build: .
+    environment:
+      - SERVERURL=http://gsender:8000
+      - MQTTSERVER=mqtt
+      - MQTTPORT=1883
+      - MQTTUSERNAME=user
+      - MQTTPASSWORD=password
+      - MQTTTOPIC=gsender
+      - MQTTCLIENTID=gsender2mqtt
+    depends_on:
+      - mqtt
+
+  mqtt:
+    image: eclipse-mosquitto:latest
+    ports:
+      - "1883:1883"
+    volumes:
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+
+volumes:
+  mosquitto_data:
+  mosquitto_log: 
