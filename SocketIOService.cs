@@ -9,13 +9,22 @@ using SocketIOClient;
 
 namespace gsender2mqtt;
 
-public class SocketIOService : BackgroundService
+public class SocketIOService : BackgroundService, IAsyncDisposable
 {
     private readonly ILogger<SocketIOService> _logger;
     private SocketIOClient.SocketIO _client;
     private IMqttClient _mqttClient;
     private JsonSerializerOptions _jsonSerializerOptions;
     private Config _config;
+
+    private const string STATUS = "status";
+    private const string STARTUP = "startup";
+    private const string SERIALPORT = "serialport";
+    private const string CONTROLLER = "controller";
+    private const string FEEDER = "feeder";
+    private const string SENDER = "sender";
+    private const string WORKFLOW = "workflow";
+
 
     public SocketIOService(ILogger<SocketIOService> logger, Config config)
     {
@@ -29,13 +38,21 @@ public class SocketIOService : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        if (_config.MqttServer == null || _config.MqttPort == 0 || _config.MqttUsername == null || _config.MqttPassword == null || _config.ServerUrl == null)
+        {
+            _logger.LogError("MQTT server, port, username, password, or server url is not set");
+            
+            return;
+        }
+
+
         var mqttFactory = new MqttClientFactory();
         _mqttClient = mqttFactory.CreateMqttClient();
         var mqttClientOptions = new MqttClientOptionsBuilder()
                 .WithTcpServer(_config.MqttServer, _config.MqttPort)
                 .WithCredentials(_config.MqttUsername, _config.MqttPassword)
                 .Build();
-        
+
 
         _client = new SocketIOClient.SocketIO(_config.ServerUrl, new SocketIOOptions
         {
@@ -50,32 +67,53 @@ public class SocketIOService : BackgroundService
             await _client.EmitAsync("list");
         };
 
-        _client.OnDisconnected += (sender, e) =>
+        _client.OnDisconnected += async (sender, e) =>
         {
             _logger.LogInformation("Disconnected from server");
+            if (_mqttClient.IsConnected)
+            {
+                await _mqttClient.PublishAsync(new MqttApplicationMessageBuilder()
+                        .WithTopic($"{_config.MqttTopic}/status")
+                        .WithPayload("disconnected")
+                        .Build());
+            }
         };
 
-        _client.OnAny((e, data) =>
+        _client.OnAny(async (e, data) =>
         {
             _logger.LogInformation($"Event: {e}, Data: {data}");
-            if(_mqttClient.IsConnected)
+            if (_mqttClient.IsConnected && (_config.IncludeAll ||
+            (_config.IncludeStartup && e.StartsWith(STARTUP)) ||
+            (_config.IncludeSerialPort && e.StartsWith(SERIALPORT)) ||
+            (_config.IncludeController && e.StartsWith(CONTROLLER)) ||
+            (_config.IncludeFeeder && e.StartsWith(FEEDER)) ||
+            (_config.IncludeSender && e.StartsWith(SENDER)) ||
+            (_config.IncludeWorkflow && e.StartsWith(WORKFLOW))))
             {
-                _mqttClient.PublishAsync(new MqttApplicationMessageBuilder()
+                await _mqttClient.PublishAsync(new MqttApplicationMessageBuilder()
                     .WithTopic($"{_config.MqttTopic}/{e}")
                     .WithPayload(data.ToString())
                     .Build());
             }
         });
 
-        _client.On("serialport:list", (data) =>
+        _client.On("serialport:list", async (data) =>
         {
-            _logger.LogInformation($"serialport:list: {data}");
-            
             var serialPorts = JsonSerializer.Deserialize<List<List<SerialPort>>>(data.ToString(), _jsonSerializerOptions);
             var serialPort = serialPorts.SelectMany(p => p).FirstOrDefault(p => p.InUse);
             if (serialPort != null)
             {
-                _client.EmitAsync("open", serialPort.Port);
+                await _client.EmitAsync("open", serialPort.Port);
+                await _mqttClient.PublishAsync(new MqttApplicationMessageBuilder()
+                    .WithTopic($"{_config.MqttTopic}/status")
+                    .WithPayload("connected")
+                    .Build());
+            }
+            else
+            {
+                // no serial port found, disconnect from server and try again after a delay
+                _logger.LogInformation("No active serial port found, disconnecting from server and trying again after a delay");
+                await _client.DisconnectAsync();
             }
         });
 
@@ -84,24 +122,29 @@ public class SocketIOService : BackgroundService
             _logger.LogError($"Error: {e}");
         };
 
-        while(!stoppingToken.IsCancellationRequested)
+        while (!stoppingToken.IsCancellationRequested)
         {
-            if(!_mqttClient.IsConnected)
-                await _mqttClient.ConnectAsync(mqttClientOptions, stoppingToken);  
-            if(_mqttClient.IsConnected && !_client.Connected)
+            if (!_mqttClient.IsConnected)
+                await _mqttClient.ConnectAsync(mqttClientOptions, stoppingToken);
+            if (_mqttClient.IsConnected && !_client.Connected)
                 await _client.ConnectAsync();
-            await Task.Delay(1000);
+            await Task.Delay(_config.RetryDelay);
         }
 
         await _client.DisconnectAsync();
     }
 
-    
-
-    public override void Dispose()
+    async ValueTask IAsyncDisposable.DisposeAsync()
     {
+        if (_mqttClient.IsConnected)
+        {
+            await _mqttClient.PublishAsync(new MqttApplicationMessageBuilder()
+                    .WithTopic($"{_config.MqttTopic}/status")
+                    .WithPayload("disconnected")
+                    .Build());
+        }
         _client?.Dispose();
         _mqttClient?.Dispose();
         base.Dispose();
     }
-} 
+}

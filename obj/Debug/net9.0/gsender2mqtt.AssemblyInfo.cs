@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("gsender2mqtt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49e87070042bd0ac2a89862a6c032071849c4889")]
 [assembly: System.Reflection.AssemblyProductAttribute("gsender2mqtt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("gsender2mqtt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
