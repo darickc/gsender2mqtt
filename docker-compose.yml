@@ -2,12 +2,11 @@ services:
   gsender2mqtt:
     build: .
     environment:
-      - SERVERURL=http://192.168.12.195:8000
-      - MQTTSERVER=192.168.1.1
+      - SERVERURL=http://localhost:8000
+      - MQTTSERVER=localhost
       - MQTTPORT=1883
       - MQTTUSERNAME=
       - MQTTPASSWORD=
       - MQTTTOPIC=gsender
       - MQTTCLIENTID=gsender2mqtt
       - RETRYDELAY=60000
-      - INCLUDEWORKFLOW=true

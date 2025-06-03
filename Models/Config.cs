@@ -11,8 +11,8 @@ public class Config
     public string MqttPassword { get; set; }
     public string MqttTopic { get; set; }
     public string MqttClientId { get; set; }
-    public int RetryDelay { get; set; }
-    public bool IncludeAll { get; set; }
+    public int RetryDelay { get; set; } = 60000;
+    public bool IncludeAll { get; set; } = true;
     public bool IncludeStartup { get; set; }
     public bool IncludeSerialPort { get; set; }
     public bool IncludeController { get; set; }

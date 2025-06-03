@@ -37,7 +37,7 @@ The application can be configured using environment variables:
 | `MQTTTOPIC` | Base MQTT topic | `gsender` |
 | `MQTTCLIENTID` | MQTT client ID | `gsender2mqtt` |
 | `RETRYDELAY` | Delay between reconnection attempts (ms) | `60000` |
-| `INCLUDEALL` | Include all events | `false` |
+| `INCLUDEALL` | Include all events | `true` |
 | `INCLUDESTARTUP` | Include startup events | `false` |
 | `INCLUDESERIALPORT` | Include serial port events | `false` |
 | `INCLUDECONTROLLER` | Include controller events | `false` |
