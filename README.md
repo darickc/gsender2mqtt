@@ -1,6 +1,6 @@
 # gsender2mqtt
 
-A .NET application that bridges gsender events to MQTT, allowing you to integrate your gsender machine with MQTT-based home automation systems or other IoT applications.
+A .NET application that bridges gsender events to MQTT, allowing you to integrate your gsender machine with MQTT-based home automation systems or other IoT applications.  Remote mode must be enabled on gsender.
 
 ## Features
 
