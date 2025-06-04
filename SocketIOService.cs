@@ -98,7 +98,6 @@ public class SocketIOService : BackgroundService, IAsyncDisposable
             if (serialPort != null)
             {
                 await _client.EmitAsync("open", serialPort.Port);
-                await PublishAsync(STATUS, "connected");
             }
             else
             {
@@ -106,6 +105,11 @@ public class SocketIOService : BackgroundService, IAsyncDisposable
                 _logger.LogInformation("No active serial port found, disconnecting from server and trying again after a delay");
                 await _client.DisconnectAsync();
             }
+        });
+
+        _client.On("serialport:open", async (data) =>
+        {
+            await PublishAsync(STATUS, "connected");
         });
 
         _client.OnError += (sender, e) =>
