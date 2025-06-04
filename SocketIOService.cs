@@ -72,10 +72,7 @@ public class SocketIOService : BackgroundService, IAsyncDisposable
             _logger.LogInformation("Disconnected from server");
             if (_mqttClient.IsConnected)
             {
-                await _mqttClient.PublishAsync(new MqttApplicationMessageBuilder()
-                        .WithTopic($"{_config.MqttTopic}/status")
-                        .WithPayload("disconnected")
-                        .Build());
+                await PublishAsync(STATUS, "disconnected");
             }
         };
 
@@ -90,10 +87,7 @@ public class SocketIOService : BackgroundService, IAsyncDisposable
             (_config.IncludeSender && e.StartsWith(SENDER)) ||
             (_config.IncludeWorkflow && e.StartsWith(WORKFLOW))))
             {
-                await _mqttClient.PublishAsync(new MqttApplicationMessageBuilder()
-                    .WithTopic($"{_config.MqttTopic}/{e}")
-                    .WithPayload(data.ToString())
-                    .Build());
+                await PublishAsync(e, data.ToString());
             }
         });
 
@@ -104,10 +98,7 @@ public class SocketIOService : BackgroundService, IAsyncDisposable
             if (serialPort != null)
             {
                 await _client.EmitAsync("open", serialPort.Port);
-                await _mqttClient.PublishAsync(new MqttApplicationMessageBuilder()
-                    .WithTopic($"{_config.MqttTopic}/status")
-                    .WithPayload("connected")
-                    .Build());
+                await PublishAsync(STATUS, "connected");
             }
             else
             {
@@ -134,14 +125,21 @@ public class SocketIOService : BackgroundService, IAsyncDisposable
         await _client.DisconnectAsync();
     }
 
+    private async Task PublishAsync(string topic, string payload)
+    {
+        await _mqttClient.PublishAsync(new MqttApplicationMessageBuilder()
+                .WithTopic($"{_config.MqttTopic}/{topic}")
+                .WithPayload(payload)
+                .WithRetainFlag(true)
+                .WithQualityOfServiceLevel(MQTTnet.Protocol.MqttQualityOfServiceLevel.AtLeastOnce)
+                .Build());
+    }
+
     async ValueTask IAsyncDisposable.DisposeAsync()
     {
         if (_mqttClient.IsConnected)
         {
-            await _mqttClient.PublishAsync(new MqttApplicationMessageBuilder()
-                    .WithTopic($"{_config.MqttTopic}/status")
-                    .WithPayload("disconnected")
-                    .Build());
+            await PublishAsync(STATUS, "disconnected");
         }
         _client?.Dispose();
         _mqttClient?.Dispose();
