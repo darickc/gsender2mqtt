@@ -47,7 +47,6 @@
 /Users/darickc/Code/gsender2mqtt/obj/Debug/net9.0/gsender2mqtt.genruntimeconfig.cache
 /Users/darickc/Code/gsender2mqtt/obj/Debug/net9.0/ref/gsender2mqtt.dll
 /Users/darickc/Code/gsender2mqtt/bin/Debug/net9.0/MQTTnet.dll
-/Users/darickc/Code/gsender2mqtt/bin/Debug/net9.0/appsettings.Development.json
 /Users/darickc/Code/gsender2mqtt/bin/Debug/net9.0/appsettings.json
 /Users/darickc/Code/gsender2mqtt/bin/Debug/net9.0/appsettings.Production.json
 /Users/darickc/Code/gsender2mqtt/bin/Debug/net9.0/Microsoft.Extensions.DependencyModel.dll

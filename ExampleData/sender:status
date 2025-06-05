@@ -1,0 +1,22 @@
+[
+  {
+    "sp": 1,
+    "hold": false,
+    "holdReason": null,
+    "name": "",
+    "context": {},
+    "size": 0,
+    "total": 0,
+    "sent": 0,
+    "received": 0,
+    "startTime": 0,
+    "finishTime": 0,
+    "elapsedTime": 0,
+    "remainingTime": 0,
+    "toolChanges": 0,
+    "estimatedTime": 0,
+    "ovF": 100,
+    "isRotaryFile": false,
+    "currentLineRunning": 0
+  }
+]

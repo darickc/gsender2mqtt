@@ -1,0 +1,55 @@
+[
+    "grblHAL",
+    {
+      "status": {
+        "activeState": "Alarm",
+        "mpos": {
+          "x": "0.000",
+          "y": "0.000",
+          "z": "0.000"
+        },
+        "wpos": {
+          "x": "-130.000",
+          "y": "-145.000",
+          "z": "72.997"
+        },
+        "ov": [
+          100,
+          100,
+          100
+        ],
+        "alarmCode": 14,
+        "subState": "14",
+        "probeActive": false,
+        "pinState": {},
+        "wco": {
+          "x": "130.000",
+          "y": "145.000",
+          "z": "-72.997"
+        },
+        "buf": {
+          "planner": 35,
+          "rx": 1023
+        },
+        "feedrate": 0,
+        "spindle": 0
+      },
+      "parserstate": {
+        "modal": {
+          "motion": "G0",
+          "wcs": "G54",
+          "plane": "G17",
+          "units": "G21",
+          "distance": "G90",
+          "feedrate": "G94",
+          "cycle": "G98",
+          "spindle": "M5",
+          "coolant": "M9",
+          "tool": "0"
+        },
+        "tool": "0",
+        "feedrate": "0",
+        "spindle": "0."
+      }
+    }
+  ]

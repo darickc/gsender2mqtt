@@ -22,6 +22,12 @@ The application can publish the following types of events to MQTT:
 - Feeder events
 - Sender events
 - Workflow events
+- Configuration events
+- Error events
+- File events
+- Job events
+- Homing events
+- G-code error events
 
 ## Configuration
 
@@ -44,6 +50,12 @@ The application can be configured using environment variables:
 | `INCLUDEFEEDER` | Include feeder events | `false` |
 | `INCLUDESENDER` | Include sender events | `false` |
 | `INCLUDEWORKFLOW` | Include workflow events | `false` |
+| `INCLUDECONFIG` | Include configuration events | `false` |
+| `INCLUDEERROR` | Include error events | `false` |
+| `INCLUDEFILE` | Include file events | `false` |
+| `INCLUDEJOB` | Include job events | `false` |
+| `INCLUDEHOMING` | Include homing events | `false` |
+| `INCLUDEGCODEERROR` | Include G-code error events | `false` |
 
 ## Running with Docker
 
@@ -93,6 +105,22 @@ For example:
 - `gsender/feeder` - Feeder events
 - `gsender/sender` - Sender events
 - `gsender/workflow` - Workflow events
+
+## Example Data
+
+The project includes example data files in the `ExampleData` directory that demonstrate the format of various events. These examples can be useful for testing and understanding the event structure:
+
+- `status` - Shows connection status events (e.g., "disconnected")
+- `startup` - Contains startup configuration including loaded controllers and available ports
+- `file.load` - Example of file loading events
+- `job:start` - Example of job start events
+- `gcode_error` - Example of G-code error events
+- `homing:flag` - Example of homing events
+- `config:change` - Example of configuration change events
+- `grbleHal:info` - Example of controller information events
+- `sender:status` - Example of sender status events
+
+These example files can be used to test your MQTT integration or to understand the expected format of different event types.
 
 ## License
 

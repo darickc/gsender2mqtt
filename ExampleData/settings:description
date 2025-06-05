@@ -1,0 +1,784 @@
+[
+  {
+    "0": {
+      "group": 27,
+      "description": "Step pulse time",
+      "unit": "microseconds",
+      "dataType": 6,
+      "format": "#0.0",
+      "unitString": "microseconds",
+      "details": "Sets time length per step. Minimum 2 microseconds.\\n\\nThis needs to be reduced from the default value of 10 when max. step rates exceed approximately 80 kHz."
+    },
+    "1": {
+      "group": 27,
+      "description": "Step idle delay",
+      "unit": "milliseconds",
+      "dataType": 5,
+      "format": "####0",
+      "unitString": "milliseconds",
+      "details": "Sets a short hold delay when stopping to let dynamics settle before disabling steppers. Value 255 keeps motors enabled."
+    },
+    "2": {
+      "group": 27,
+      "description": "Step pulse invert",
+      "unit": "",
+      "dataType": 4,
+      "format": null,
+      "unitString": "mask",
+      "details": "Inverts the step signals (active low)."
+    },
+    "3": {
+      "group": 27,
+      "description": "Step direction invert",
+      "unit": "",
+      "dataType": 4,
+      "format": null,
+      "unitString": "mask",
+      "details": "Inverts the direction signals (active low)."
+    },
+    "4": {
+      "group": 27,
+      "description": "Invert stepper enable pin(s)",
+      "unit": "",
+      "dataType": 4,
+      "format": null,
+      "unitString": "mask",
+      "details": "Inverts the stepper driver enable signals. Most drivers uses active low enable requiring inversion.\\n\\nNOTE: If the stepper drivers shares the same enable signal only X is used."
+    },
+    "5": {
+      "group": 3,
+      "description": "Invert limit pins",
+      "unit": "",
+      "dataType": 4,
+      "format": null,
+      "unitString": "mask",
+      "details": "Inverts the axis limit input signals."
+    },
+    "6": {
+      "group": 12,
+      "description": "Invert probe pin",
+      "unit": "",
+      "dataType": 0,
+      "format": null,
+      "unitString": "boolean",
+      "details": "Inverts the probe input pin signal."
+    },
+    "7": {
+      "group": 6,
+      "description": "Disable spindle with zero speed",
+      "unit": "",
+      "dataType": 0,
+      "format": null,
+      "unitString": "boolean"
+    },
+    "10": {
+      "group": 1,
+      "description": "Status report options",
+      "unit": "",
+      "dataType": 1,
+      "format": [
+        "Position in machine coordinate",
+        "Buffer state",
+        "Line numbers",
+        "Feed & speed",
+        "Pin state",
+        "Work coordinate offset",
+        "Overrides",
+        "Probe coordinates",
+        "Buffer sync on WCO change",
+        "Parser state",
+        "Alarm substatus",
+        "Run substatus"
+      ],
+      "unitString": "mask",
+      "details": "Specifies optional data included in status reports.\\nIf Run substatus is enabled it may be used for simple probe protection.\\n\\nNOTE: Parser state will be sent separately after the status report and only on changes."
+    },
+    "11": {
+      "group": 1,
+      "description": "Junction deviation",
+      "unit": "mm",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm",
+      "details": "Sets how fast Grbl travels through consecutive motions. Lower value slows it down."
+    },
+    "12": {
+      "group": 1,
+      "description": "Arc tolerance",
+      "unit": "mm",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm",
+      "details": "Sets the G2 and G3 arc tracing accuracy based on radial error. Beware: A very small value may effect performance."
+    },
+    "13": {
+      "group": 1,
+      "description": "Report in inches",
+      "unit": "",
+      "dataType": 0,
+      "format": null,
+      "unitString": "boolean",
+      "details": "Enables inch units when returning any position and rate value that is not a settings value."
+    },
+    "14": {
+      "group": 2,
+      "description": "Invert control pins",
+      "unit": "",
+      "dataType": 1,
+      "format": [
+        "N/A",
+        "Feed hold",
+        "Cycle start",
+        "N/A",
+        "N/A",
+        "N/A",
+        "EStop"
+      ],
+      "unitString": "mask",
+      "details": "Inverts the control signals (active low).\\nNOTE: Block delete, Optional stop, EStop and Probe connected are optional signals, availability is driver dependent."
+    },
+    "15": {
+      "group": 5,
+      "description": "Invert coolant pins",
+      "unit": "",
+      "dataType": 1,
+      "format": [
+        "Flood",
+        "Mist"
+      ],
+      "unitString": "mask",
+      "details": "Inverts the coolant and mist signals (active low)."
+    },
+    "16": {
+      "group": 6,
+      "description": "Invert spindle signals",
+      "unit": "",
+      "dataType": 1,
+      "format": "Spindle enable",
+      "unitString": "mask",
+      "details": "Inverts the spindle on, counterclockwise and PWM signals (active low)."
+    },
+    "17": {
+      "group": 2,
+      "description": "Pullup disable control pins",
+      "unit": "",
+      "dataType": 1,
+      "format": [
+        "N/A",
+        "Feed hold",
+        "Cycle start",
+        "N/A",
+        "N/A",
+        "N/A",
+        "EStop"
+      ],
+      "unitString": "mask",
+      "details": "Disable the control signals pullup resistors. Potentially enables pulldown resistor if available.\\nNOTE: Block delete, Optional stop and EStop are optional signals, availability is driver dependent."
+    },
+    "18": {
+      "group": 3,
+      "description": "Pullup disable limit pins",
+      "unit": "",
+      "dataType": 4,
+      "format": null,
+      "unitString": "mask",
+      "details": "Disable the limit signals pullup resistors. Potentially enables pulldown resistor if available."
+    },
+    "19": {
+      "group": 12,
+      "description": "Pullup disable probe pin",
+      "unit": "",
+      "dataType": 0,
+      "format": null,
+      "unitString": "boolean",
+      "details": "Disable the probe signal pullup resistor. Potentially enables pulldown resistor if available."
+    },
+    "20": {
+      "group": 3,
+      "description": "Soft limits enable",
+      "unit": "",
+      "dataType": 0,
+      "format": null,
+      "unitString": "boolean",
+      "details": "Enables soft limits checks within machine travel and sets alarm when exceeded. Requires homing."
+    },
+    "21": {
+      "group": 3,
+      "description": "Hard limits enable",
+      "unit": "",
+      "dataType": 2,
+      "format": [
+        "Enable",
+        "Strict mode"
+      ],
+      "unitString": "mask",
+      "details": "When enabled immediately halts motion and throws an alarm when a limit switch is triggered. In strict mode only homing is possible when a switch is engaged."
+    },
+    "22": {
+      "group": 11,
+      "description": "Homing cycle",
+      "unit": "",
+      "dataType": 2,
+      "format": [
+        "Enable",
+        "Enable single axis commands",
+        "Homing on startup required",
+        "Set machine origin to 0",
+        "Two switches shares one input pin",
+        "Allow manual",
+        "Override locks",
+        "Keep homed status on reset"
+      ],
+      "unitString": "mask",
+      "details": "Enables homing cycle. Requires limit switches on axes to be automatically homed.\\n\\nWhen `Enable single axis commands` is checked, single axis homing can be performed by $H<axis letter> commands.\\n\\nWhen `Allow manual` is checked, axes not homed automatically may be homed manually by $H or $H<axis letter> commands.\\n\\n`Override locks` is for allowing a soft reset to disable `Homing on startup required`."
+    },
+    "23": {
+      "group": 11,
+      "description": "Homing direction invert",
+      "unit": "",
+      "dataType": 4,
+      "format": null,
+      "unitString": "mask",
+      "details": "Homing searches for a switch in the positive direction. Set axis bit to search in negative direction."
+    },
+    "24": {
+      "group": 11,
+      "description": "Homing locate feed rate",
+      "unit": "mm/min",
+      "dataType": 6,
+      "format": "#####0.0",
+      "unitString": "mm/min",
+      "details": "Feed rate to slowly engage limit switch to determine its location accurately."
+    },
+    "25": {
+      "group": 11,
+      "description": "Homing search seek rate",
+      "unit": "mm/min",
+      "dataType": 6,
+      "format": "#####0.0",
+      "unitString": "mm/min",
+      "details": "Seek rate to quickly find the limit switch before the slower locating phase."
+    },
+    "26": {
+      "group": 11,
+      "description": "Homing switch debounce delay",
+      "unit": "milliseconds",
+      "dataType": 5,
+      "format": "##0",
+      "unitString": "milliseconds",
+      "details": "Sets a short delay between phases of homing cycle to let a switch debounce."
+    },
+    "27": {
+      "group": 11,
+      "description": "Homing switch pull-off distance",
+      "unit": "mm",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm",
+      "details": "Retract distance after triggering switch to disengage it. Homing will fail if switch isn't cleared."
+    },
+    "28": {
+      "group": 1,
+      "description": "G73 Retract distance",
+      "unit": "mm",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm",
+      "details": "G73 retract distance (for chip breaking drilling)."
+    },
+    "29": {
+      "group": 27,
+      "description": "Pulse delay",
+      "unit": "microseconds",
+      "dataType": 6,
+      "format": "#0.0",
+      "unitString": "microseconds",
+      "details": "Step pulse delay.\\n\\nNormally leave this at 0 as there is an implicit delay on direction changes when AMASS is active."
+    },
+    "30": {
+      "group": 6,
+      "description": "Maximum spindle speed",
+      "unit": "RPM",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "RPM",
+      "details": "Maximum spindle speed. Sets PWM to maximum duty cycle."
+    },
+    "31": {
+      "group": 6,
+      "description": "Minimum spindle speed",
+      "unit": "RPM",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "RPM",
+      "details": "Minimum spindle speed. Sets PWM to minimum duty cycle."
+    },
+    "32": {
+      "group": 1,
+      "description": "Mode of operation",
+      "unit": "",
+      "dataType": 3,
+      "format": [
+        "Normal",
+        "Laser mode",
+        "Lathe mode"
+      ],
+      "unitString": "integer",
+      "details": "Laser mode: consecutive G1/2/3 commands will not halt when spindle speed is changed.\\nLathe mode: allows use of G7, G8, G96 and G97."
+    },
+    "33": {
+      "group": 6,
+      "description": "Spindle PWM frequency",
+      "unit": "Hz",
+      "dataType": 6,
+      "format": "#####0",
+      "unitString": "Hz",
+      "details": "Spindle PWM frequency."
+    },
+    "34": {
+      "group": 6,
+      "description": "Spindle PWM off value",
+      "unit": "percent",
+      "dataType": 6,
+      "format": "##0.0",
+      "unitString": "percent",
+      "details": "Spindle PWM off value in percent (duty cycle)."
+    },
+    "35": {
+      "group": 6,
+      "description": "Spindle PWM min value",
+      "unit": "percent",
+      "dataType": 6,
+      "format": "##0.0",
+      "unitString": "percent",
+      "details": "Spindle PWM min value in percent (duty cycle)."
+    },
+    "36": {
+      "group": 6,
+      "description": "Spindle PWM max value",
+      "unit": "percent",
+      "dataType": 6,
+      "format": "##0.0",
+      "unitString": "percent",
+      "details": "Spindle PWM max value in percent (duty cycle)."
+    },
+    "37": {
+      "group": 27,
+      "description": "Steppers deenergize",
+      "unit": "",
+      "dataType": 4,
+      "format": null,
+      "unitString": "mask",
+      "details": "Specifies which steppers not to disable when stopped."
+    },
+    "39": {
+      "group": 1,
+      "description": "Enable legacy RT commands",
+      "unit": "",
+      "dataType": 0,
+      "format": null,
+      "unitString": "boolean",
+      "details": "Enables \"normal\" processing of ?, ! and ~ characters when part of $-setting or comment. If disabled then they are added to the input string instead."
+    },
+    "40": {
+      "group": 14,
+      "description": "Limit jog commands",
+      "unit": "",
+      "dataType": 0,
+      "format": null,
+      "unitString": "boolean",
+      "details": "Limit jog commands to machine limits for homed axes."
+    },
+    "43": {
+      "group": 11,
+      "description": "Homing passes",
+      "unit": "",
+      "dataType": 5,
+      "format": "##0",
+      "unitString": "",
+      "details": "Number of homing passes. Minimum 1, maximum 128."
+    },
+    "44": {
+      "group": 11,
+      "description": "Axes homing, first pass",
+      "unit": "",
+      "dataType": 4,
+      "format": null,
+      "unitString": "mask",
+      "details": "Axes to home in first pass."
+    },
+    "45": {
+      "group": 11,
+      "description": "Axes homing, second pass",
+      "unit": "",
+      "dataType": 4,
+      "format": null,
+      "unitString": "mask",
+      "details": "Axes to home in second pass."
+    },
+    "46": {
+      "group": 11,
+      "description": "Axes homing, third pass",
+      "unit": "",
+      "dataType": 4,
+      "format": null,
+      "unitString": "mask",
+      "details": "Axes to home in third pass."
+    },
+    "62": {
+      "group": 1,
+      "description": "Sleep enable",
+      "unit": "",
+      "dataType": 0,
+      "format": null,
+      "unitString": "boolean",
+      "details": "Enable sleep mode."
+    },
+    "63": {
+      "group": 1,
+      "description": "Feed hold actions",
+      "unit": "",
+      "dataType": 1,
+      "format": [
+        "Disable laser during hold",
+        "Restore spindle and coolant state on resume"
+      ],
+      "unitString": "mask",
+      "details": "Actions taken during feed hold and on resume from feed hold."
+    },
+    "64": {
+      "group": 1,
+      "description": "Force init alarm",
+      "unit": "",
+      "dataType": 0,
+      "format": null,
+      "unitString": "boolean",
+      "details": "Starts Grbl in alarm mode after a cold reset."
+    },
+    "65": {
+      "group": 12,
+      "description": "Probing feed override",
+      "unit": "",
+      "dataType": 0,
+      "format": null,
+      "unitString": "boolean",
+      "details": "Allow feed override during probing."
+    },
+    "70": {
+      "group": 15,
+      "description": "Network Services",
+      "unit": "",
+      "dataType": 1,
+      "format": [
+        "Telnet",
+        "Websocket"
+      ],
+      "unitString": "mask",
+      "details": "Network services to enable. Consult driver documentation for availability.\\n\\nNOTE: A hard reset of the controller is required after changing this setting."
+    },
+    "100": {
+      "group": 30,
+      "description": "X-axis travel resolution",
+      "unit": "step/mm",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "step/mm",
+      "details": "Travel resolution in steps per millimeter."
+    },
+    "101": {
+      "group": 31,
+      "description": "Y-axis travel resolution",
+      "unit": "step/mm",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "step/mm",
+      "details": "Travel resolution in steps per millimeter."
+    },
+    "102": {
+      "group": 32,
+      "description": "Z-axis travel resolution",
+      "unit": "step/mm",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "step/mm",
+      "details": "Travel resolution in steps per millimeter."
+    },
+    "110": {
+      "group": 30,
+      "description": "X-axis maximum rate",
+      "unit": "mm/min",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm/min",
+      "details": "Maximum rate. Used as G0 rapid rate."
+    },
+    "111": {
+      "group": 31,
+      "description": "Y-axis maximum rate",
+      "unit": "mm/min",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm/min",
+      "details": "Maximum rate. Used as G0 rapid rate."
+    },
+    "112": {
+      "group": 32,
+      "description": "Z-axis maximum rate",
+      "unit": "mm/min",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm/min",
+      "details": "Maximum rate. Used as G0 rapid rate."
+    },
+    "120": {
+      "group": 30,
+      "description": "X-axis acceleration",
+      "unit": "mm/sec^2",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm/sec^2",
+      "details": "Acceleration. Used for motion planning to not exceed motor torque and lose steps."
+    },
+    "121": {
+      "group": 31,
+      "description": "Y-axis acceleration",
+      "unit": "mm/sec^2",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm/sec^2",
+      "details": "Acceleration. Used for motion planning to not exceed motor torque and lose steps."
+    },
+    "122": {
+      "group": 32,
+      "description": "Z-axis acceleration",
+      "unit": "mm/sec^2",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm/sec^2",
+      "details": "Acceleration. Used for motion planning to not exceed motor torque and lose steps."
+    },
+    "130": {
+      "group": 30,
+      "description": "X-axis maximum travel",
+      "unit": "mm",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm",
+      "details": "Maximum axis travel distance from homing switch. Determines valid machine space for soft-limits and homing search distances."
+    },
+    "131": {
+      "group": 31,
+      "description": "Y-axis maximum travel",
+      "unit": "mm",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm",
+      "details": "Maximum axis travel distance from homing switch. Determines valid machine space for soft-limits and homing search distances."
+    },
+    "132": {
+      "group": 32,
+      "description": "Z-axis maximum travel",
+      "unit": "mm",
+      "dataType": 6,
+      "format": "#####0.000",
+      "unitString": "mm",
+      "details": "Maximum axis travel distance from homing switch. Determines valid machine space for soft-limits and homing search distances."
+    },
+    "300": {
+      "group": 15,
+      "description": "Hostname",
+      "unit": "",
+      "dataType": 7,
+      "format": "x(64)",
+      "unitString": "",
+      "details": "Network hostname.\\n\\nNOTE: A hard reset of the controller is required after changing this setting."
+    },
+    "301": {
+      "group": 15,
+      "description": "IP Mode",
+      "unit": "",
+      "dataType": 3,
+      "format": [
+        "Static",
+        "DHCP",
+        "AutoIP"
+      ],
+      "unitString": "integer",
+      "details": "IP Mode.\\n\\nNOTE: A hard reset of the controller is required after changing this setting."
+    },
+    "302": {
+      "group": 15,
+      "description": "IP Address",
+      "unit": "",
+      "dataType": 9,
+      "format": null,
+      "unitString": "",
+      "details": "Static IP address.\\n\\nNOTE: A hard reset of the controller is required after changing this setting."
+    },
+    "303": {
+      "group": 15,
+      "description": "Gateway",
+      "unit": "",
+      "dataType": 9,
+      "format": null,
+      "unitString": "",
+      "details": "Static gateway address.\\n\\nNOTE: A hard reset of the controller is required after changing this setting."
+    },
+    "304": {
+      "group": 15,
+      "description": "Netmask",
+      "unit": "",
+      "dataType": 9,
+      "format": null,
+      "unitString": "",
+      "details": "Static netmask.\\n\\nNOTE: A hard reset of the controller is required after changing this setting."
+    },
+    "305": {
+      "group": 15,
+      "description": "Telnet port",
+      "unit": "",
+      "dataType": 5,
+      "format": "####0",
+      "unitString": "",
+      "details": "(Raw) Telnet port number listening for incoming connections.\\n\\nNOTE: A hard reset of the controller is required after changing this setting."
+    },
+    "307": {
+      "group": 15,
+      "description": "Websocket port",
+      "unit": "",
+      "dataType": 5,
+      "format": "####0",
+      "unitString": "",
+      "details": "Websocket port number listening for incoming connections.\\n\\nNOTE: A hard reset of the controller is required after changing this setting.\\n\\nNOTE: WebUI requires this to be HTTP port number + 1."
+    },
+    "340": {
+      "group": 6,
+      "description": "Spindle at speed tolerance",
+      "unit": "percent",
+      "dataType": 6,
+      "format": "##0.0",
+      "unitString": "percent",
+      "details": "Spindle at speed tolerance as percentage deviation from programmed speed, set to 0 to disable.\\nIf not within tolerance when checked after spindle on delay ($392) alarm 14 is raised."
+    },
+    "341": {
+      "group": 9,
+      "description": "Tool change mode",
+      "unit": "",
+      "dataType": 3,
+      "format": [
+        "Normal",
+        "Manual touch off",
+        "Manual touch off @ G59.3",
+        "Automatic touch off @ G59.3",
+        "Ignore M6"
+      ],
+      "unitString": "integer",
+      "details": "Normal: allows jogging for manual touch off. Set new position manually.\\n\\nManual touch off: retracts tool axis to home position for tool change, use jogging or $TPW for touch off.\\n\\nManual touch off @ G59.3: retracts tool axis to home position then to G59.3 position for tool change, use jogging or $TPW for touch off.\\n\\nAutomatic touch off @ G59.3: retracts tool axis to home position for tool change, then to G59.3 position for automatic touch off.\\n\\nAll modes except \"Normal\" and \"Ignore M6\" returns the tool (controlled point) to original position after touch off."
+    },
+    "342": {
+      "group": 9,
+      "description": "Tool change probing distance",
+      "unit": "mm",
+      "dataType": 6,
+      "format": "#####0.0",
+      "unitString": "mm",
+      "details": "Maximum probing distance for automatic or $TPW touch off."
+    },
+    "343": {
+      "group": 9,
+      "description": "Tool change locate feed rate",
+      "unit": "mm/min",
+      "dataType": 6,
+      "format": "#####0.0",
+      "unitString": "mm/min",
+      "details": "Feed rate to slowly engage tool change sensor to determine the tool offset accurately."
+    },
+    "344": {
+      "group": 9,
+      "description": "Tool change search seek rate",
+      "unit": "mm/min",
+      "dataType": 6,
+      "format": "#####0.0",
+      "unitString": "mm/min",
+      "details": "Seek rate to quickly find the tool change sensor before the slower locating phase."
+    },
+    "345": {
+      "group": 9,
+      "description": "Tool change probe pull-off rate",
+      "unit": "mm/min",
+      "dataType": 6,
+      "format": "#####0.0",
+      "unitString": "mm/min",
+      "details": "Pull-off rate for the retract move before the slower locating phase."
+    },
+    "370": {
+      "group": 18,
+      "description": "Invert I/O Port inputs",
+      "unit": "",
+      "dataType": 1,
+      "format": [
+        "Aux 0",
+        "Aux 1",
+        "Aux 2",
+        "Aux 3"
+      ],
+      "unitString": "mask",
+      "details": "Invert IOPort inputs."
+    },
+    "372": {
+      "group": 18,
+      "description": "Invert I/O Port outputs",
+      "unit": "",
+      "dataType": 1,
+      "format": [
+        "Aux 0",
+        "Aux 1",
+        "Aux 2"
+      ],
+      "unitString": "mask",
+      "details": "Invert IOPort output."
+    },
+    "374": {
+      "group": 19,
+      "description": "ModBus baud rate",
+      "unit": "",
+      "dataType": 3,
+      "format": [
+        "2400",
+        "4800",
+        "9600",
+        "19200",
+        "38400",
+        "115200"
+      ],
+      "unitString": "integer"
+    },
+    "375": {
+      "group": 19,
+      "description": "ModBus RX timeout",
+      "unit": "milliseconds",
+      "dataType": 5,
+      "format": "####0",
+      "unitString": "milliseconds",
+      "details": ""
+    },
+    "384": {
+      "group": 1,
+      "description": "Disable G92 persistence",
+      "unit": "",
+      "dataType": 0,
+      "format": null,
+      "unitString": "boolean",
+      "details": "Disables save/restore of G92 offset to non-volatile storage (NVS)."
+    },
+    "394": {
+      "group": 6,
+      "description": "Spindle on delay",
+      "unit": "s",
+      "dataType": 6,
+      "format": "#0.0",
+      "unitString": "s",
+      "details": ""
+    }
+  }
+]

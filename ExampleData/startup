@@ -1,0 +1,11 @@
+[
+  {
+    "loadedControllers": [
+      "Grbl",
+      "grblHAL"
+    ],
+    "baudrates": [],
+    "ports": [],
+    "socketsLength": 2
+  }
+]

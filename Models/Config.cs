@@ -19,4 +19,10 @@ public class Config
     public bool IncludeFeeder { get; set; }
     public bool IncludeSender { get; set; }
     public bool IncludeWorkflow { get; set; }
+    public bool IncludeConfig { get; set; }
+    public bool IncludeError { get; set; }
+    public bool IncludeFile { get; set; }
+    public bool IncludeJob { get; set; }
+    public bool IncludeHoming { get; set; }
+    public bool IncludeGcodeError { get; set; }
 }

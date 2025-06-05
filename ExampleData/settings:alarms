@@ -1,0 +1,72 @@
+[
+  {
+    "1": {
+      "description": "Hard limit has been triggered. Machine position is likely lost due to sudden halt. Re-homing is highly recommended.",
+      "id": 1
+    },
+    "2": {
+      "description": "Soft limit alarm. G-code motion target exceeds machine travel. Machine position retained. Alarm may be safely unlocked.",
+      "id": 2
+    },
+    "3": {
+      "description": "Reset while in motion. Machine position is likely lost due to sudden halt. Re-homing is highly recommended.",
+      "id": 3
+    },
+    "4": {
+      "description": "Probe fail. Probe is not in the expected initial state before starting probe cycle when G38.2 and G38.3 is not triggered and G38.4 and G38.5 is triggered.",
+      "id": 4
+    },
+    "5": {
+      "description": "Probe fail. Probe did not contact the workpiece within the programmed travel for G38.2 and G38.4.",
+      "id": 5
+    },
+    "6": {
+      "description": "Homing fail. The active homing cycle was reset.",
+      "id": 6
+    },
+    "7": {
+      "description": "Homing fail. Safety door was opened during homing cycle.",
+      "id": 7
+    },
+    "8": {
+      "description": "Homing fail. Pull off travel failed to clear limit switch. Try increasing pull-off setting or check wiring.",
+      "id": 8
+    },
+    "9": {
+      "description": "Homing fail. Could not find limit switch within search distances. Try increasing max travel, decreasing pull-off distance, or check wiring.",
+      "id": 9
+    },
+    "10": {
+      "description": "EStop asserted. Clear and reset",
+      "id": 10
+    },
+    "11": {
+      "description": "Homing required. Execute homing command ($H) to continue.",
+      "id": 11
+    },
+    "12": {
+      "description": "Limit switch engaged. Clear before continuing.",
+      "id": 12
+    },
+    "13": {
+      "description": "Probe protection triggered. Clear before continuing.",
+      "id": 13
+    },
+    "14": {
+      "description": "Spindle at speed timeout. Clear before continuing.",
+      "id": 14
+    },
+    "15": {
+      "description": "Homing fail. Could not find second limit switch for auto squared axis within search distances. Try increasing max travel, decreasing pull-off distance, or check wiring.",
+      "id": 15
+    },
+    "16": {
+      "description": "Power on selftest (POS) failed.",
+      "id": 16
+    },
+    "17": {
+      "description": "Motor fault.",
+      "id": 17
+    }
+  }
+]

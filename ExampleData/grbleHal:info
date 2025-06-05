@@ -1,0 +1,7 @@
+[
+  {
+    "name": "MSG",
+    "value": "'$H'|'$X' to unlock",
+    "raw": "[MSG:'$H'|'$X' to unlock]"
+  }
+]

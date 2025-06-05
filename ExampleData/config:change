@@ -1,0 +1,632 @@
+[
+    {
+      "events": {},
+      "state": {
+        "checkForUpdates": false,
+        "controller": {
+          "exception": {
+            "ignoreErrors": false
+          }
+        }
+      },
+      "maintenance": [
+        {
+          "id": 0,
+          "name": "Cleaning Rails & Wheels",
+          "description": "The gunk on both the wheels and rails is easy to get off with a small brush, plastic scraper, wood scrap, or even your fingernails. Remember to clean the rails on both the top and bottom edges and try your best to get into the crevices of all the wheels.",
+          "rangeStart": 10,
+          "rangeEnd": 20,
+          "currentTime": 0.0017297222222222223
+        },
+        {
+          "id": 1,
+          "name": "Tightening Eccentric Nuts / V-Wheels",
+          "description": "1. Get your LongMill wrench and an M5 Allen key and start by loosening the wheel bolt far enough that you can rotate the eccentric nut with the wrench.\n2. Turn the nut so the eccentric hole gets closer to the rail which will bring the wheel closer to the rail as well. The ‘sweet spot’ is where you’re able to barely turn each wheel with your fingers.\n3. Once you’re satisfied with the nut placement, re-tighten the M5 bolt with the Allen key to confirm the new location.\n4. Check both the wheel you just tightened as well as its static ‘partner’ wheel on the opposite side of the rail for the right ‘sweet spot’. Whichever wheel is on top will always be harder to spin.",
+          "rangeStart": 10,
+          "rangeEnd": 20,
+          "currentTime": 0.0017297222222222223
+        },
+        {
+          "id": 2,
+          "name": "Tension Delrin Nuts",
+          "description": "1. If you have the dust shield add-on for your machine, remove it so you can access the mechanics underneath.\n2. Check X, Z, and both Y plates by moving each of them back and forth. If you can feel them wiggle a little bit even though the lead screws are stationary you may need to tension your anti-backlash nut.\n3. Every anti-backlash nut has a tensioning screw that you can reach with an M5 Allen key. Adjusting each screw should only happen a very very tiny rotation at a time before checking again for looseness in the plate. These screws normally require very little rotation and if you overtighten them it can put added stress on your machine and also cause premature wear.",
+          "rangeStart": 10,
+          "rangeEnd": 20,
+          "currentTime": 0.0017297222222222223
+        },
+        {
+          "id": 3,
+          "name": "Lubricate Linear Rails",
+          "description": "1. Wipe your linear guides with a clean cloth, paper towel, rag, or shop towel to remove any dust that may have accumulated on your linear guides. Move your Z-axis up and down if needed.\n2. Most general-purpose lubrication options such as the 3-in-1 oil should suffice. It is not recommended to use dry lubricants or anything with particulates such as graphite in the lubricant.\n3. Apply a liberal of machine oil or grease to your linear guides. Move your Z-axis up and down to ensure that the bearings inside have a chance to get coated.",
+          "rangeStart": 20,
+          "rangeEnd": 30,
+          "currentTime": 0.0017297222222222223
+        },
+        {
+          "id": 4,
+          "name": "Check For Loose Hardware",
+          "description": "Some key areas to check:\n1. Set screws on all couplers and ACME locking nuts\n2. M5 screws holding the feet onto the Y-rails and Y-axis plates onto the X-rail\n3. M5 screws mounting the stepper motors to their steel plates\n4. M5 screws on the router mount from in front and where it’s held in from behind\n5. M3 screws holding the Z-axis steel plate on and the linear rails to the X-axis plate\n6. Any assorted fasteners on any add-ons you may have received with your MK2",
+          "rangeStart": 20,
+          "rangeEnd": 30,
+          "currentTime": 0.0017297222222222223
+        },
+        {
+          "id": 5,
+          "name": "Replace Delrin Nuts",
+          "description": "These wear out over time. They need replacing every 1500-2000 hours.",
+          "rangeStart": 1500,
+          "rangeEnd": 2000,
+          "currentTime": 0.0017297222222222223
+        },
+        {
+          "id": 6,
+          "name": "Replace V-Wheels",
+          "description": "These wear out over time. They need replacing every 1500-2000 hours.",
+          "rangeStart": 1500,
+          "rangeEnd": 2000,
+          "currentTime": 0.0017297222222222223
+        }
+      ],
+      "secret": "$2a$10$7bRQD.OLlvADCNqdfWj5QO",
+      "metrics": {
+        "collectUserData": "ACCEPTED"
+      },
+      "remoteSettings": {
+        "ip": "192.168.12.195",
+        "port": 8000,
+        "headlessStatus": true,
+        "error": true
+      },
+      "alarmList": {
+        "list": [
+          {
+            "id": "44",
+            "type": "ERROR",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:23:10.593Z",
+            "CODE": "2",
+            "MESSAGE": "Missing the expected G-code word value or numeric value format is not valid.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "43",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:23:08.719Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "42",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:23:07.189Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "41",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:23:04.180Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "40",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:23:01.107Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "39",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:58.760Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "38",
+            "type": "ERROR",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:56.357Z",
+            "CODE": "2",
+            "MESSAGE": "Missing the expected G-code word value or numeric value format is not valid.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "37",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:55.664Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "36",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:54.121Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "35",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:52.813Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "34",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:50.701Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "33",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:50.029Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "32",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:49.180Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "31",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:47.097Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "30",
+            "type": "ERROR",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:46.897Z",
+            "CODE": "2",
+            "MESSAGE": "Missing the expected G-code word value or numeric value format is not valid.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "29",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:45.675Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "28",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:44.393Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "27",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:42.702Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "26",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:36.845Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 5,
+            "line": "M3S16000\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "25",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:36.486Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 5,
+            "line": "M3S16000\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "24",
+            "type": "ERROR",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:31.793Z",
+            "CODE": "2",
+            "MESSAGE": "Missing the expected G-code word value or numeric value format is not valid.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "23",
+            "type": "ERROR",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:30.170Z",
+            "CODE": "2",
+            "MESSAGE": "Missing the expected G-code word value or numeric value format is not valid.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "22",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:28.043Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 5,
+            "line": "M3S16000\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "21",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T02:22:27.400Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 5,
+            "line": "M3S16000\r",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "20",
+            "type": "ERROR",
+            "source": "Feeder",
+            "time": "2025-06-04T01:29:05.069Z",
+            "CODE": "2",
+            "MESSAGE": "Missing the expected G-code word value or numeric value format is not valid.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "19",
+            "type": "ERROR",
+            "source": "Feeder",
+            "time": "2025-06-04T01:29:03.440Z",
+            "CODE": "2",
+            "MESSAGE": "Missing the expected G-code word value or numeric value format is not valid.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "18",
+            "type": "ERROR",
+            "source": "Feeder",
+            "time": "2025-06-02T22:23:29.122Z",
+            "CODE": "2",
+            "MESSAGE": "Missing the expected G-code word value or numeric value format is not valid.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "17",
+            "type": "ERROR",
+            "source": "Feeder",
+            "time": "2025-06-02T22:22:48.277Z",
+            "CODE": "2",
+            "MESSAGE": "Missing the expected G-code word value or numeric value format is not valid.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "16",
+            "type": "ERROR",
+            "source": "Feeder",
+            "time": "2025-06-02T22:16:32.238Z",
+            "CODE": "2",
+            "MESSAGE": "Missing the expected G-code word value or numeric value format is not valid.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "15",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:58.232Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "14",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:56.365Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "13",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:54.488Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "12",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:52.285Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "11",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:50.019Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "10",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:48.140Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "9",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:46.476Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "8",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:44.630Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "7",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:42.693Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "6",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:40.796Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "5",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:38.884Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "4",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:36.940Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "3",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:35.302Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "2",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:31.363Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "1",
+            "type": "ALARM",
+            "source": "Feeder",
+            "time": "2025-06-02T22:15:29.273Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "0",
+            "type": "ERROR",
+            "source": "Feeder",
+            "time": "2025-05-26T21:32:38.877Z",
+            "CODE": "2",
+            "MESSAGE": "Missing the expected G-code word value or numeric value format is not valid.",
+            "lineNumber": "",
+            "line": "N/A",
+            "controller": "grblHAL"
+          },
+          {
+            "id": "45",
+            "type": "ALARM",
+            "source": "cutting board flatten_1-Pocket 1.GCODE",
+            "time": "2025-06-04T03:20:58.175Z",
+            "CODE": 14,
+            "MESSAGE": "Spindle at speed timeout. Clear before continuing.",
+            "lineNumber": 1,
+            "line": "T1 (End Mil 2 (1 inch))\r",
+            "controller": "grblHAL"
+          }
+        ]
+      },
+      "macros": [
+        {
+          "id": "2687b594-1eff-4438-ae27-a8b2264b9036",
+          "mtime": 1749003764712,
+          "name": "First Tool (run first))",
+          "content": ";***This macro should be run to establish your tool length offset AFTER you set your original Z work zero***\n;***Any tool changes can use the New_Tool macro***\n\n\n; Wait until the planner queue is empty\n%wait\n\n; Set user-defined variables\n\n%global.state.SAFE_HEIGHT = -10 ; clear everything height(negative number, distance below Z limit)\n;Following set probe location\n%global.state.PROBE_X_LOCATION = 42;machine coordinates\n%global.state.PROBE_Y_LOCATION = 52 ;machine coordinates\n%global.state.PROBE_Z_LOCATION = -100   ;machine coordinates --> lower this (more negative) to start the probing closer to wasteboard\n\n%global.state.PROBE_DISTANCE = 100\n%global.state.PROBE_RAPID_FEEDRATE = 200 ;mm/min\n\n\n%wait\n\n; Keep a backup of current work position\n%X0=posx, Y0=posy, Z0=posz\n\n; Save modal state\n%WCS = modal.wcs\n%PLANE = modal.plane\n%UNITS = modal.units\n%DISTANCE = modal.distance\n%FEEDRATE = modal.feedrate\n%SPINDLE = modal.spindle\n%COOLANT = modal.coolant\n\nG21 ;metric\nM5   ;Stop spindle\nG90\t;Absolute positioning\n\nG53 G0 Z[global.state.SAFE_HEIGHT]\nG53 X[global.state.PROBE_X_LOCATION] Y[global.state.PROBE_Y_LOCATION]\n%wait\n; Set up for probing...pause for attaching wires and stuff\nM0\n\nG53 Z[global.state.PROBE_Z_LOCATION]\nG91\nG38.2 Z-[global.state.PROBE_DISTANCE] F[global.state.PROBE_RAPID_FEEDRATE];fast probe(so it doesn't take forever)\nG0 z2\nG38.2 z-5 F40\t;\"dial-it-in\" probes\nG4 P.25\nG38.4 z10 F20\nG4 P.25\nG38.2 z-2 F10\nG4 P.25\nG38.4 z10 F5\nG4 P.25\nG90\n%global.state.TOOL_REFERENCE = posz\t;establish a global tool reference work offset\n%wait\n(TOOL_REFERENCE = [global.state.TOOL_REFERENCE])\n\nG91\nG0 Z5\nG90\nG53 Z[global.state.SAFE_HEIGHT]\n%wait\n\n; Pause the program for cleanup (e.G. remove touch plate, wires, etc)\nM0\n;Go to work zero at a SAFE_HEIGHT for Z\nG0 X0 Y0\n; Restore modal state\n[WCS] [PLANE] [UNITS] [DISTANCE] [FEEDRATE] [SPINDLE] [COOLANT]\n",
+          "description": " ",
+          "column": "column1",
+          "rowIndex": 0
+        },
+        {
+          "id": "43153a2e-2f02-4c71-9ed4-07cff1a62cd4",
+          "mtime": 1749002101422,
+          "name": "New Tool",
+          "content": ";***WARNING - YOU MUST HAVE ALREADY RUN THE INITIAL TOOL MACRO FOR THIS TO WORK!***\n;This macro allows you to use a fixed machine location for a tool change/probe. Ideal when you're workpiece surface has been carved away.\n;\n\n; Wait until the planner queue is empty\n%wait\n\n; Keep a backup of current work position\n%X0=posx, Y0=posy, Z0=posz\n\n; Save modal state\n%WCS = modal.wcs\n%PLANE = modal.plane\n%UNITS = modal.units\n%DISTANCE = modal.distance\n%FEEDRATE = modal.feedrate\n%SPINDLE = modal.spindle\n%COOLANT = modal.coolant\n\nG21 ;metric\nM5   ;Stop spindle\nG90\t;Absolute positioning\n\nG53 G0 Z[global.state.SAFE_HEIGHT]\nG53 X[global.state.PROBE_X_LOCATION] Y[global.state.PROBE_Y_LOCATION]\n%wait\n\n\n;Pause for manual tool change & probing\nM0\n\nG53 Z[global.state.PROBE_Z_LOCATION]\nG91\nG38.2 z-[global.state.PROBE_DISTANCE] F[global.state.PROBE_RAPID_FEEDRATE];fast probe (so it doesn't take forever)\nG0 z2\nG38.2 z-5 F40\t;\"dial-it-in\" probes\nG4 P.25\nG38.4 z10 F20\nG4 P.25\nG38.2 z-2 F10\nG4 P.25\nG38.4 z10 F5\nG4 P.25\nG90\n\n%wait\n; Update Z offset for new tool\nG10 L20 Z[global.state.TOOL_REFERENCE]\n%wait\n\nG91\nG0 Z5\nG90\nG53 Z[global.state.SAFE_HEIGHT]\n%wait\n; Pause the program for cleanup (e.G. remove touch plate, wires, etc)\nM0\n;Go to work zero at a SAFE_HEIGHT for Z\nG0 X0 Y0\n; Restore modal state\n[WCS] [PLANE] [UNITS] [DISTANCE] [FEEDRATE] [SPINDLE] [COOLANT]\n\n\nGo to XY0\n\nG21 ;metric\nM5   ;Stop spindle\nG90\t;Absolute positioning\nG53 G0 Z-30\nG53 X130 Y145",
+          "description": " ",
+          "column": "column2",
+          "rowIndex": 0
+        }
+      ],
+      "jobStats": {
+        "totalRuntime": 6227,
+        "totalJobs": 0,
+        "jobsCompleted": 0,
+        "jobsCancelled": 1,
+        "jobs": [
+          {
+            "id": "0",
+            "type": "JOB",
+            "file": "cutting board flatten_1-Pocket 1.GCODE",
+            "path": "",
+            "totalLines": 86,
+            "port": "COM3",
+            "controller": "grblHAL",
+            "startTime": "2025-06-04T03:20:49.676Z",
+            "endTime": null,
+            "duration": 6227,
+            "jobStatus": "STOPPED"
+          }
+        ]
+      }
+    }
+  ]

@@ -32,6 +32,6 @@ class Program
                 })
             .Build();
 
-        await host.RunAsync();
+         await host.RunAsync();
     }
 }

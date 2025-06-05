@@ -1,0 +1,12 @@
+[
+  {
+    "type": "ALARM",
+    "code": 14,
+    "description": "Spindle at speed timeout. Clear before continuing.",
+    "line": "T1 (End Mil 2 (1 inch))\r",
+    "lineNumber": 1,
+    "origin": "cutting board flatten_1-Pocket 1.GCODE",
+    "controller": "grblHAL"
+  },
+  false
+]
