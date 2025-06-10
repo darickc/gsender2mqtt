@@ -5,6 +5,7 @@ namespace gsender2mqtt.Models;
 public class Config
 {
     public string ServerUrl { get; set; }
+    public string GrblHalIpAddress { get; set; }
     public string MqttServer { get; set; }
     public int MqttPort { get; set; }
     public string MqttUsername { get; set; }
@@ -25,4 +26,5 @@ public class Config
     public bool IncludeJob { get; set; }
     public bool IncludeHoming { get; set; }
     public bool IncludeGcodeError { get; set; }
+
 }

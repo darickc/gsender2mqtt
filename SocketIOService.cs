@@ -132,6 +132,10 @@ public class SocketIOService : BackgroundService, IAsyncDisposable
                 {
                     await _client.EmitAsync("open", serialPort.Port);
                 }
+                else if (_config.GrblHalIpAddress != null)
+                {
+                    await _client.EmitAsync("open", _config.GrblHalIpAddress);
+                }
                 else
                 {
                     // no serial port found, disconnect from server and try again after a delay
