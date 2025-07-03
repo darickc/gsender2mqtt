@@ -11,6 +11,7 @@ public class Config
     public string MqttUsername { get; set; }
     public string MqttPassword { get; set; }
     public string MqttTopic { get; set; }
+    public string MqttEmitTopic { get; set; }
     public string MqttClientId { get; set; }
     public int RetryDelay { get; set; } = 60000;
     public bool IncludeAll { get; set; } = true;

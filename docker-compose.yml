@@ -9,5 +9,6 @@ services:
       - MQTTUSERNAME=
       - MQTTPASSWORD=
       - MQTTTOPIC=gsender
+      - MQTT_EMIT_TOPIC=gsender/emit
       - MQTTCLIENTID=gsender2mqtt
       - RETRYDELAY=60000
