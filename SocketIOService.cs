@@ -64,11 +64,11 @@ public class SocketIOService : BackgroundService, IAsyncDisposable
             _mqttClient.ApplicationMessageReceivedAsync += async (e) =>
             {
                 _logger.LogInformation($"MQTT received: {e.ApplicationMessage.Topic}");
-                if (_client?.Connected ?? false && e.ApplicationMessage.Topic.StartsWith($"{_config.MqttEmitTopic}/{EMIT}"))
+                if (_client?.Connected ?? false && e.ApplicationMessage.Topic.StartsWith($"{_config.MqttEmitTopic}"))
                 {
                     try
                     {
-                        var eventName = e.ApplicationMessage.Topic.Replace($"{_config.MqttTopic}/{EMIT}/", "");
+                        var eventName = e.ApplicationMessage.Topic.Replace($"{_config.MqttEmitTopic}/", "");
                         var payload = e.ApplicationMessage.ConvertPayloadToString();
                         var payloadObject = JsonSerializer.Deserialize<object>(payload, _jsonSerializerOptions);
                         _logger.LogInformation($"Emitting event: {eventName} with payload: {payload}");
